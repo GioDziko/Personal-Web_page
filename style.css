@@ -1,0 +1,208 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+html {
+    box-sizing: border-box;
+  
+    /* Set font size for easy rem calculations
+     * default document font size = 16px, 1rem = 16px, 100% = 16px
+     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+    */
+    scroll-behavior: smooth;
+  }
+  
+  /* A few media query to set some font sizes at different screen sizes.
+   * This helps automate a bit of responsiveness.
+   * The trick is to use the rem unit for size values, margin and padding.
+   * Because rem is relative to the document font size
+   * when we scale up or down the font size on the document
+   * it will affect all properties using rem units for the values.
+  */
+  
+  /* I am using the em unit for breakpoints
+   * The calculation is the following
+   * screen size divided by browser base font size
+   * As an example: a breakpoint at 980px
+   * 980px / 16px = 61.25em
+  */
+  
+  /* 1200px / 16px = 75em */
+  @media (max-width: 75em) {
+    html {
+      font-size: 100%;
+    }
+  }
+  
+  /* 980px / 16px = 61.25em */
+  @media (max-width: 61.25em) {
+    html {
+      font-size: 100%;
+    }
+  }
+  
+  /* 460px / 16px = 28.75em */
+  @media (max-width: 28.75em) {
+    html {
+      font-size: 60%;
+    }
+  }
+  
+.container{
+    width: 100%;
+    height: 100%;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem; /* 18px */
+    font-weight: 400;
+    line-height: 1.4;
+    color: #f0f0f0;
+    
+}
+
+#navbar-header{
+ 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.4rem;
+
+}
+a{
+    text-decoration: none;
+    color: #f0f0f0;
+}
+.navbar{
+    flex: 1;   
+    
+}
+
+header ul{
+    top: 0;
+    left: 0;    
+    display: flex;
+    justify-content: flex-end;
+    background-color:#be3144 ;
+    list-style: none;
+}
+header li{
+    padding: 1rem;
+    margin-right: 1rem;   
+}
+header li:hover{
+    
+    transform: translateY(0.75rem);
+    transition: transform 0.6s;
+    
+}
+
+
+.indtroduce{
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+#description{
+    font-weight: 200;
+    font-style: italic;
+    color:#be3144 ;
+}
+
+.portfolio{
+    width: 100%;
+    background-color:#45567d;
+    padding-top: 3rem;
+    text-align: center;
+}
+.project-portfolio{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-auto-rows: 400px;
+    gap: 10px;
+    justify-content: center;
+    padding: 4rem;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.project-portfolio img{
+    width: 100%;
+    height: 80%;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.project-text{
+    font-size: 1.5rem;
+    background-color: rgba(68, 68, 70, 0.397);
+    position: relative;
+    bottom: 0.55rem;
+    border-radius: 5px;
+}
+.project-portfolio span{
+    color:rgba(68, 68, 70, 0.397) ;
+}
+.project-portfolio .project:hover span {
+    color: red;
+    transition: 0.6s;
+}
+.Contact{
+    background-color: #303841;
+    text-align: center;
+    padding: 1rem;
+}
+.Contact ul {
+    margin-top: 2rem;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.Contact li {
+    flex: 1;
+    margin: 0 2rem;
+    cursor: pointer;
+}
+@media (max-width: 600px){
+    #contact-ul{
+        flex-direction: column;
+    
+    }
+    
+}
+.Contact li:hover{
+    
+    background-color: #434c57;
+    transform: translateY(0.75rem);
+    transition: transform 0.6s;
+    
+}
+
+#contact-text{
+    font-weight: 200;
+    font-style: italic;
+    color:#be3144 ;
+}
+.hr{
+    margin-top: 2rem;
+    border: 1px solid #be3144;
+}
+.footer{
+    background-color: #303841;
+    padding: 1rem;
+}
+.footer p {
+    font-size: 10px;
+    text-align: end;
+    
+}
